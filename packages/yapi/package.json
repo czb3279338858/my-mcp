@@ -1,0 +1,40 @@
+{
+  "name": "yapi-plus-mcp",
+  "version": "1.0.1",
+  "description": "Yapi Plus MCP Server - 基于 Yapi MCP 的增强扩展，让 AI 助手更高效地访问 Yapi API 管理平台",
+  "type": "module",
+  "bin": {
+    "yapi-plus-mcp-server": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "yapi",
+    "api",
+    "model-context-protocol",
+    "ai",
+    "api-management"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "publish:npm": "npm publish"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.25.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
