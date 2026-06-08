@@ -1,10 +1,10 @@
 {
-  "name": "yapi-plus-mcp",
-  "version": "1.0.2",
-  "description": "Yapi Plus MCP Server - 基于 Yapi MCP 的增强扩展，让 AI 助手更高效地访问 Yapi API 管理平台",
+  "name": "yapi-mcp-plus",
+  "version": "1.0.0",
+  "description": "Yapi MCP Plus - 基于 Yapi MCP 的增强扩展，让 AI 助手更高效地访问 Yapi API 管理平台",
   "type": "module",
   "bin": {
-    "yapi-plus-mcp-server": "./dist/index.js"
+    "yapi-mcp-plus": "./dist/index.js"
   },
   "main": "./dist/index.js",
   "files": [
@@ -21,10 +21,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "prepublishOnly": "npm run build",
-    "release": "npm version patch && npm publish"
+    "nvm":"nvm use 24.15.0 && timeout /T 1 /NOBREAK",
+    "build": "npm run nvm && tsc",
+    "dev": "npm run nvm && tsc --watch",
+    "inspect": "npm run build && npx @modelcontextprotocol/inspector --config ./inspector.json",
+    "release": "npm run build && npm version patch && npm publish"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
